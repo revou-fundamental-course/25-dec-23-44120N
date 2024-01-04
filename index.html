@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="shortcut icon" href="../assets/biru.svg">
+        <!-- remixIcon -->
+        <link href="https://cdn.jsdelivr.net/npm/remixicon@3.2.0/fonts/remixicon.css" rel="stylesheet">
+        <!-- JQuery -->
+        <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+        <!-- MathJax -->
+        <script type="text/javascript" async="" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+        <!-- styleSheet -->
+        <link rel="stylesheet" href="../css/style.css">
+        <title>Triangle</title>
+    </head>
+    <body>
+        <div class="black-bg">
+            <header class="header" id="navbar">
+            <nav class="nav container">
+                <div class="nav__data">
+                    <a href="https://github.com/44120N" class="nav__logo">
+                        <img src="../assets/putih.svg">
+                    </a>
+                    <div class="nav__toggle" id="nav-toggle">
+                        <i class="ri-menu-line nav__burger"></i>
+                        <i class="ri-close-line nav__close"></i>
+                    </div>
+                </div>
+                <div class="nav__menu" id="nav-menu">
+                    <ul class="nav__list">
+                        <li><a href="#" class="nav__link">Home</a></li>
+                        <li><a href="#perimeter_page" class="nav__link">Perimeter</a></li>
+                        <li><a href="#area_page" class="nav__link">Area</a></li>
+                        <li><a href="#heron_page" class="nav__link">Heron</a></li>
+                        <li><a href="#doc_page" class="nav__link">Documentation</a></li>
+                    </ul>
+                </div>
+            </nav>
+            </header>
+            <div class="banner">
+                <video autoplay muted loop>
+                    <source src="/assets/media/videos/geometry/1080p60/MyScene.mp4" type="video/mp4" />
+                </video>
+                <div class="caption">
+                    <p id="title">Triangle</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="about">
+            <div class="content" id="perimeter_page">
+                <div class="title">
+                    Perimeter
+                </div>
+                <div class="lineh"></div>
+                <div class="form">
+                    <span class="form__equation">
+                        \[P = a + b + c\]
+                    </span>
+                    <table style="width: 100%; table-layout: fixed;">
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <table style="margin: 0;">
+                                        <tr>    
+                                            <td>
+                                                <label for="a">\(a\)</label>
+                                            </td>
+                                            <td style="width: 20%;">
+                                                <p>side</p>
+                                            </td>
+                                            <td>
+                                                <input id="a" type="number" oninput="callPerimeter()">
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <label for="b">\(b\)</label>
+                                            </td>
+                                            <td style="width: 20%;">
+                                                <p>side</p>
+                                            </td>
+                                            <td>
+                                                <input id="b" type="number" oninput="callPerimeter()">
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <label for="c">\(c\)</label>
+                                            </td>
+                                            <td style="width: 20%;">
+                                                <p>side</p>
+                                            </td>
+                                            <td>
+                                                <input id="c" type="number" oninput="callPerimeter()">
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <label for="P">\(P\)</label>
+                                            </td>
+                                            <td style="width: 20%;">
+                                                <p>Perimeter</p>
+                                            </td>
+                                            <td>
+                                                <input id="P" type="number" oninput="callPerimeter()">
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </td>
+                                <td>
+                                    <video autoplay muted loop>
+                                        <source src="/assets/media/videos/geometry/1080p60/MyTriangle_abc_line.mp4" type="video/mp4" />
+                                    </video>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="form__result">
+                        <div class="eq-align">
+                            <p id="perimeter"></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="content">
+                <div class="title" id="area_page">
+                    Area
+                </div>
+                <div class="lineh"></div>
+                <div class="form">
+                    <span class="form__equation">
+                        \[A = \frac{1}{2} bh\]
+                    </span>
+                    <table style="width: 100%; table-layout: fixed;">
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <table style="margin: 0;">
+                                        <tr>    
+                                            <td>
+                                                <label for="base">\(b\)</label>
+                                            </td>
+                                            <td style="width: 20%;">
+                                                <p>base</p>
+                                            </td>
+                                            <td>
+                                                <input id="base" type="number" oninput="callArea()">
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <label for="height">\(h\)</label>
+                                            </td>
+                                            <td style="width: 20%;">
+                                                <p>height</p>
+                                            </td>
+                                            <td>
+                                                <input id="height" type="number" oninput="callArea()">
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <label for="A">\(A\)</label>
+                                            </td>
+                                            <td style="width: 20%;">
+                                                <p>Area</p>
+                                            </td>
+                                            <td>
+                                                <input id="A" type="number" oninput="callArea()">
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </td>
+                                <td>
+                                    <video autoplay muted loop>
+                                        <source src="/assets/media/videos/geometry/1080p60/MyTriangle_bh.mp4" type="video/mp4" />
+                                    </video>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="form__result">
+                        <div class="eq-align">
+                            <p id="area"></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="content" id="heron_page">
+                <div class="title">
+                    Heron
+                </div>
+                <div class="lineh"></div>
+                <div class="form">
+                    <span class="form__equation">
+                        \[s = \frac{a + b + c}{2}\]
+                    </span>
+                    <br>
+                    <span class="form__equation">
+                        \[A = \sqrt{s(s-a)(s-b)(s-c)}\]
+                    </span>
+                    <table style="width: 100%; table-layout: fixed;">
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <table style="margin: 0;">
+                                        <tr>    
+                                            <td>
+                                                <label for="aH">\(a\)</label>
+                                            </td>
+                                            <td style="width: 20%;">
+                                                <p>side</p>
+                                            </td>
+                                            <td>
+                                                <input id="aH" type="number" oninput="callHeron()">
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <label for="bH">\(b\)</label>
+                                            </td>
+                                            <td style="width: 20%;">
+                                                <p>side</p>
+                                            </td>
+                                            <td>
+                                                <input id="bH" type="number" oninput="callHeron()">
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <label for="cH">\(c\)</label>
+                                            </td>
+                                            <td style="width: 20%;">
+                                                <p>side</p>
+                                            </td>
+                                            <td>
+                                                <input id="cH" type="number" oninput="callHeron()">
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <label for="H">\(A\)</label>
+                                            </td>
+                                            <td style="width: 20%;">
+                                                <p>Area</p>
+                                            </td>
+                                            <td>
+                                                <input id="H" type="number" oninput="callHeron()">
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </td>
+                                <td>
+                                    <video autoplay muted loop>
+                                        <source src="/assets/media/videos/geometry/1080p60/MyTriangle_abc.mp4" type="video/mp4" />
+                                    </video>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="form__result">
+                        <div class="eq-align">
+                            <p id="heron"></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="content" id="doc_page">
+                <div class="title">
+                    Documentation
+                </div>
+                <div class="lineh"></div>
+                <div class="form">
+                    <span class="subtitle">
+                        <b>Input</b>
+                    </span>
+                    <img src="/assets/docs/invalid_input.png">
+                    <table style="width: 100%; margin-top: 0; table-layout: fixed;">
+                        <thead>
+                            <tr>
+                                <td colspan="2"><b>Note:</b></td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="desc">
+                                    <p>The input must be valid!</p>
+                                    <p>The valid output is <b>Positive Numbers</b></p>
+                                </td>
+                                <td class="desc">
+                                    <p>Here is some example that is forbidden:</p>
+                                    <p>\[\text{e.g.}: \{ 0, -1, -2.5, 1000000000000001 \} \]</p>
+                                </td>
+                            <tr>
+                                <td class="desc">
+                                    <p>Here is the requirement of the output with some examples:</p>
+                                    <p>\[\text{Output} = \{x \mid 0 \lt x \le 10^{15} \mid x \in \mathbb{R} \}\]</p>
+                                    <p>\[\text{e.g.}: \{ 2, 1.618, 1024, 0.25 \} \]</p>
+                                </td>
+                                <td class="desc">
+                                    <p>If you input the <b style="color: red;">forbidden</b> numbers, 
+                                        the calculator will give you a <b style="color: red;">warning</b>
+                                        and suggest you to change your input into the valid input</p>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="form">
+                    <span class="subtitle">
+                        <b>Output</b>
+                    </span>
+                    <table style="width: 100%; table-layout: fixed;">
+                        <tr>
+                            <td>
+                                <img src="/assets/docs/input_output.png">
+                            </td>
+                            <td>
+                                <img src="/assets/docs/hypotenuse_problem.png">
+                            </td>
+                        </tr>
+                    </table>
+                    <table style="width: 100%; margin-top: 0; table-layout: fixed;">
+                        <thead>
+                            <tr>
+                                <td colspan="2"><b>Note:</b></td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="desc">
+                                    <p>If you have enough variables information,</p>
+                                    <p>The output will <b>automatically shown</b></p>
+                                    <p>Normally, you just need to input all things you need</p>
+                                    <p>and left one of the variable with a NaN (null) value</p>
+                                </td>
+                                <td class="desc">
+                                    <p>Example of the I/O on the area section: </p>
+                                    <p>Input: Base(b) variable</p>
+                                    <p>Input: Area(A) variable</p>
+                                    <p>Output: Height(h) variable</p>
+                                </td>
+                            <tr>
+                                <td class="desc">
+                                    <p>Else if you input <b>all</b> of the variable, then:</p>
+                                    <p>The output would be boolean</p>
+                                    <p>e.g. true, false, or "The triangle doesn't exist"</p>
+                                </td>
+                                <td class="desc">
+                                    <p>
+                                        Remember that the <b style="color: red;">Hypotenuse</b> of the triangle 
+                                        should be less than <b style="color: red;">the sum of the other sides</b> 
+                                        at the triangle
+                                    </p>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <footer class="footer">
+            <div class="waves">
+                <div class="wave" id="wave1"></div>
+                <div class="wave" id="wave2"></div>
+                <div class="wave" id="wave3"></div>
+                <div class="wave" id="wave4"></div>
+            </div>
+            <ul class="social-icon">
+                <li><a href="https://wa.me/628159293778/"><i class="ri-whatsapp-line"></i></a></li>
+                <li><a href="https://www.instagram.com/aaronh28/"><i class="ri-instagram-line"></i></a></li>
+                <li><a href="https://github.com/44120N"><i class="ri-github-fill"></i></a></li>
+                <li><a href="https://discordapp.com/users/793773283451469844"><i class="ri-discord-line"></i></a></li>
+            </ul>
+            <p style="margin-bottom: 0;">© Copyright 2023 | All Rights Reserved</p>
+            <p>Aaron Hartono</p>
+        </footer>
+        
+        <!-- scripts -->
+        <script src="js/navbar.js"></script>
+        <script src="js/scroll.js"></script>
+        <script src="js/variables.js"></script>
+        <script src="js/perimeter.js"></script>
+        <script src="js/area.js"></script>
+        <script src="js/heron.js"></script>
+    </body>
+</html>
