@@ -555,8 +555,8 @@ table thead{
     font-size: 1.8em;
 }
 
-#doc_page td{
-    padding: 5%;
+#doc_page tbody td{
+    padding: 3%;
 }
 
 td.desc p{
