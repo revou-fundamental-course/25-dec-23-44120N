@@ -21,7 +21,7 @@ function callHeron() {
             result.push("Side a should be positive number");
         }
         if (a > maxValue) {
-            resultPerimeter.classList.add("red");
+            resultHeron.classList.add("red");
             result.push("Side a: Number limit exceeded");
         }
 
@@ -30,7 +30,7 @@ function callHeron() {
             result.push("Side b should be positive number");
         }
         if (b > maxValue) {
-            resultPerimeter.classList.add("red");
+            resultHeron.classList.add("red");
             result.push("Side b: Number limit exceeded");
         }
 
@@ -39,7 +39,7 @@ function callHeron() {
             result.push("Side c should be positive number");
         }
         if (c > maxValue) {
-            resultPerimeter.classList.add("red");
+            resultHeron.classList.add("red");
             result.push("Side c: Number limit exceeded");
         }
 
@@ -48,11 +48,11 @@ function callHeron() {
             result.push("Area should be positive number");
         }
         if (H > maxValue) {
-            resultPerimeter.classList.add("red");
+            resultHeron.classList.add("red");
             result.push("Area: Number limit exceeded");
         }
-        
-        resultPerimeter.innerHTML = result.join("<br>");
+
+        resultHeron.innerHTML = result.join("<br>");
     } else {
         if (!isNaN(H) && !isNaN(a) && !isNaN(b) && !isNaN(c)) {
             resultHeron.classList.remove("red");
